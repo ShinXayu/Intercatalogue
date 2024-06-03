@@ -1,0 +1,43 @@
+.landing-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+
+.landing-links {
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  background-color: lightgray 3px 3px 7px;;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  border: solid 2px rgb(61, 60, 60);
+  border-top: 0px;
+  border-radius: 5px;
+  box-shadow: lightgray 3px 3px 7px;
+  margin-right: 20px;
+  outline: none;
+  font-size: 34px;
+  font-weight: 500;
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: lightgray 0 0 5px;
+  }
+}
+.titre-page {
+  font-family: 'Poppins-Medium';
+  font-size: 96px;
+  color: white;
+  background-color: rgb(53, 70, 70);
+  text-shadow: 2px 2px 2px rgb(61, 60, 60);
+  border: solid 2px rgb(61, 60, 60);
+  border-top: 0px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgb(60, 70, 70);;
+  padding: 4px 8px;
+  position: relative;
+  top: -5px;
+}

@@ -1,0 +1,43 @@
+
+    <h1 class = "project_banner">Soumettre un projet</h1>
+    <div class="submit-project-page">
+    <form (ngSubmit)="onSubmit()" #projectForm="ngForm">
+      <div class="form-group">
+        <label for="title">Titre</label>
+        <input type="text" id="title" name="title" class="form-control" [(ngModel)]="project.title" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" class="form-control" [(ngModel)]="project.description" required></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="responsible">Nom et Prénom</label>
+        <input type="text" id="responsible" name="responsible" class="form-control" [(ngModel)]="project.creator" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" [(ngModel)]="project.email" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="tags">Tags (séparés par des ",")</label>
+        <input type="text" id="tags" name="tags" class="form-control" [(ngModel)]="project.tags" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="creationDate">Date de création</label>
+        <input type="date" id="creationDate" name="creationDate" class="form-control" [(ngModel)]="project.creationDate" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="repoLink">URL du dépôt</label>
+        <input type="url" id="repoLink" name="repoLink" class="form-control" [(ngModel)]="project.url" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!projectForm.form.valid">Soumettre</button>
+    </form>
+
+</div>    
