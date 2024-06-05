@@ -10,7 +10,8 @@ export class ProjectsService {
       'Application todo list',
       'Notez vos tâches à faire pour ne pas les oublier !',
       new Date("2022"),
-      "Jean dupont",
+      "Jean",
+      "Dupont",
       ["PHP", "Javscript", "Laravel"],
       "https://gity.com/topics/todolist?l=php",
       "jeandupont@consultants-solutec.fr"
@@ -19,7 +20,8 @@ export class ProjectsService {
         'Activity Finder',
         'Postez vos annonces et trouver du monde pour participer à vos activités ',
         new Date("2023"),
-        "Thomas Roder",
+        "Thomas",
+        "Roder",
         ["C#", "APS.net", "ReactJS", "Agile", "Jira"],
         "https://github.com/Ismail-cetulos/ActivityFinder/",
         "troder@outlook.fr"
@@ -28,7 +30,8 @@ export class ProjectsService {
         'Migdrive',
         'Outils de migration de données de serveurs windows vers google drive',
         new Date("2022"),
-        "Thomas M",
+        "Thomas",
+        "M",
         ["Powershell", "Ansible", "Appscript", "Javascript", "Gitlab CI CD"],
         "https://gity.com/topics/Migdrive",
         "tm@gmail.com"
@@ -37,7 +40,8 @@ export class ProjectsService {
         'My map',
         'Application d\'affichage d\'objets personnalisés sur une carte',
         new Date("2020"),
-        "Ismail M",
+        "Ismail",
+        "M",
         ["VueJS", "Javascript", "PHP", "Laravel", "Apache"],
         "https://gity.com/topics/Mymap",
         "imrzg@gmail.com"
@@ -46,7 +50,8 @@ export class ProjectsService {
         'Collab Roadmap',
         'Moteur de recherche d\'itinéraire entre 2 points et estimation des couts de trajet',
         new Date("2022"),
-        "Gaston Lafarge",
+        "Gaston",
+        "Lafarge",
         ["Javascript", "PHP", "MySQL", "API GOOGLE"],
         "https://gity.com/topics/RMAP",
         "glafarge@solutec.fr"
@@ -69,7 +74,7 @@ export class ProjectsService {
 
  submitProject(project: any)
  {
-    project = new Project(project.title, project.description, project.createdDate, project.creator, project.tags_list,project.url,project.email)
+    project = new Project(project.title, project.description, project.createdDate, project.creatorName,project.creatorSurname, project.tags_list,project.url,project.email)
     this.Projects.push(project)
  }
 

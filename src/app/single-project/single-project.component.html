@@ -1,7 +1,7 @@
 <div class="project-details-page">
     <h1 class="project_banner">{{ project.title }}</h1>
     <div class="project-meta">
-      <span class="project-responsible"><strong>Responsable:</strong> {{ project.creator }}</span>
+      <span class="project-responsible"><strong>Responsable:</strong> {{ project.creatorName }} {{project.creatorSurname}}</span>
       <span class="project-contact"><strong>Contact: </strong> <a [href]="'mailto:' + project.contactEmail">{{ project.contactEmail }}</a></span>
     </div>
     <p class="project-description">{{ project.description }}</p>

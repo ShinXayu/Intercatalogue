@@ -15,7 +15,8 @@ export class SubmitProjectComponent {
     project = {
       title: '',
       description: '',
-      creator: '',
+      creatorName: '',
+      creatorSurname: '',
       email: '',
       tags: '',
       tags_list: [''],

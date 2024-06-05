@@ -13,8 +13,12 @@
       </div>
   
       <div class="form-group">
-        <label for="responsible">Nom et Prénom</label>
-        <input type="text" id="responsible" name="responsible" class="form-control" [(ngModel)]="project.creator" required>
+        <label for="responsible">Prenom</label>
+        <input type="text" id="responsible" name="responsibleName" class="form-control" [(ngModel)]="project.creatorName" required>
+      </div>
+      <div class="form-group">
+        <label for="responsible">Nom</label>
+        <input type="text" id="responsible" name="responsibleSurname" class="form-control" [(ngModel)]="project.creatorSurname" required>
       </div>
   
       <div class="form-group">
