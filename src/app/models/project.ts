@@ -12,7 +12,7 @@ export class Project
 
     constructor(title: string, description: string, createdDate: Date, creatorName: string, creatorSurname: string, tags: string[], url: string, email : string)
     {
-        this.id = crypto.randomUUID().substring(0, 8);
+        this.id = Math.floor(Math.random()*100000000000).toString()
         this.title = title
         this.description = description
         this.createdDate = createdDate

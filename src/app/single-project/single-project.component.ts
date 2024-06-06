@@ -30,6 +30,8 @@ export class SingleProjectComponent {
       catch
       {
         this.router.navigateByUrl("projects")
+        console.log("not found")
+        console.log("Id recup:" + projectId)
       }
     }
 
