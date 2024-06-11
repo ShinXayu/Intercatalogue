@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../models/project';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectsService {
+  constructor(private http:HttpClient)
+  {
+
+  }
+  projects$! : Observable<Project[]>
   private Projects: Project[]  = [
     new Project(
       'Application todo list',
@@ -71,11 +77,38 @@ export class ProjectsService {
   }
   return foundProject;
 }
+  splitString(inputString: string) {
+  // Vérifie si l'entrée est une chaîne de caractères
+  if (typeof inputString !== 'string') {
+    throw new TypeError('L\'entrée doit être une chaîne de caractères');
+  }
+
+  // Utilise la méthode split() pour diviser la chaîne en un tableau de mots
+  const resultArray = inputString.split(',');
+
+  // Supprime les espaces en trop autour de chaque mot
+  const trimmedArray = resultArray.map(word => word.trim());
+
+  // Filtre les éléments vides au cas où il y aurait des virgules multiples ou des espaces vides
+  const filteredArray = trimmedArray.filter(word => word.length > 0);
+
+  return filteredArray;
+}
+
 
  submitProject(project: any)
  {
-    project = new Project(project.title, project.description, project.createdDate, project.creatorName,project.creatorSurname, project.tags_list,project.url,project.email)
+    project = new Project(project.title, project.description, project.creationDate, project.creatorName,project.creatorSurname, project.tags_list,project.url,project.email)
     this.Projects.push(project)
  }
 
+ submitProjectReactiveForm(formValue: {title: string, description: string, creatorName: string, creatorSurname: string, email: string, creationDate: Date, tags: string[], url: string})
+ {
+    const project : Project =
+    {
+      ...formValue,
+      id:  Math.floor(Math.random()*100000000000).toString()
+    }
+    this.Projects.push(project)
+ }
 }

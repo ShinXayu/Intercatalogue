@@ -6,6 +6,7 @@ import { Project } from '../models/project';
 import { NgFor } from '@angular/common';
 import { SingleProjectComponent } from '../single-project/single-project.component';
 import { ProjectComponent } from '../project/project.component';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-project-list',
   standalone: true,
@@ -15,6 +16,7 @@ import { ProjectComponent } from '../project/project.component';
 })
 export class ProjectListComponent {
   Projects: Project[];
+  projects$! : Observable<Project[]>
   constructor(private ProjectsService: ProjectsService, private router: Router)
   {
     this.Projects = ProjectsService.getProjects()
