@@ -10,7 +10,6 @@ export class ProjectsService {
   {
 
   }
-  projects$! : Observable<Project[]>
   private Projects: Project[]  = [
     new Project(
       'Application todo list',
@@ -68,7 +67,10 @@ export class ProjectsService {
     return [...this.Projects];
   }
 
-  
+  getAllProjects(): Observable<Project[]>
+  {
+    return this.http.get<Project[]>('http://localhost:8080/Projects')
+  }
 
  getProjectById(ProjectId: string): Project {
   const foundProject = this.Projects.find(Project => Project.id === ProjectId);

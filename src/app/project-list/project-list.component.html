@@ -1,7 +1,7 @@
 <div class="project">
     <h1 class="project_banner">Nos projets</h1>
     <div class="projects-grid">
-        @for (project of Projects; track project.title) {
+        @for (project of projects$ | async  ; track project.title) {
             <app-project [project]="project" />
           }
     </div>
