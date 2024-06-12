@@ -72,13 +72,17 @@ export class ProjectsService {
     return this.http.get<Project[]>('http://localhost:8080/Projects')
   }
 
- getProjectById(ProjectId: string): Project {
+ /*getProjectById(ProjectId: string): Project {
   const foundProject = this.Projects.find(Project => Project.id === ProjectId);
   if (!foundProject) {
     throw new Error('Project not found!');
   }
   return foundProject;
-}
+} */
+  getProjectById(ProjectId: string)
+  {
+    return this.http.get<Project>(`http://localhost:8080/Project/${ProjectId}`)
+  }
   splitString(inputString: string) {
   // Vérifie si l'entrée est une chaîne de caractères
   if (typeof inputString !== 'string') {
@@ -103,7 +107,12 @@ export class ProjectsService {
     project = new Project(project.title, project.description, project.creationDate, project.creatorName,project.creatorSurname, project.tags_list,project.url,project.email)
     this.Projects.push(project)
  }
-
+ addProject(formValue: { title: string, description: string, creatorName:string, creatorSurname: string, email: string, tags: string, creationDate: Date, url: string }): Observable<Project> {
+  console.log("Ajout projet")
+  return this.http.post<Project>(
+          'http://localhost:8080/Project',
+          {...formValue});
+}
  submitProjectReactiveForm(formValue: {title: string, description: string, creatorName: string, creatorSurname: string, email: string, creationDate: Date, tags: string[], url: string})
  {
     const project : Project =

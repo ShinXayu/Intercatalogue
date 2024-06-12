@@ -58,7 +58,8 @@ export class SubmitProjectComponent {
   onSubmitForm() {
     this.projectForm.value.tags = this.projectForm.value.tags.split(",")
     console.log(this.projectForm.value.tags)
-    this.ProjectsService.submitProjectReactiveForm(this.projectForm.value)
-    this.router.navigateByUrl("/projects")
+    //this.ProjectsService.submitProjectReactiveForm(this.projectForm.value)
+    this.ProjectsService.addProject(this.projectForm.value).pipe(tap(()=> this.router.navigateByUrl("/projects"))).subscribe();
+   // this.router.navigateByUrl("/projects")
   }
 }

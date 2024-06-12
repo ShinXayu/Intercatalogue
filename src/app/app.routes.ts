@@ -7,6 +7,6 @@ import { SubmitProjectComponent } from './submit-project/submit-project.componen
 export const routes: Routes = [
   { path: 'projects', component: ProjectListComponent },
   { path: '', component: LandingPageComponent},
-  { path: 'projects/:id', component: SingleProjectComponent},
+  { path: 'project/:id', component: SingleProjectComponent},
   { path: 'submit', component: SubmitProjectComponent}
 ];

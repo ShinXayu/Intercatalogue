@@ -7,6 +7,7 @@ import { AsyncPipe, NgFor } from '@angular/common';
 import { SingleProjectComponent } from '../single-project/single-project.component';
 import { ProjectComponent } from '../project/project.component';
 import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-project-list',
   standalone: true,
@@ -20,5 +21,10 @@ export class ProjectListComponent {
   constructor(private ProjectsService: ProjectsService, private router: Router)
   {
     this.Projects = ProjectsService.getProjects()
+  }
+
+  ngOnInit()
+  {
+    this.projects$ = this.ProjectsService.getAllProjects();
   }
 }

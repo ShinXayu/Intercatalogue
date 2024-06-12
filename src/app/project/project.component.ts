@@ -19,6 +19,6 @@ constructor(private router: Router, private projectService: ProjectsService)
 
 onViewProject()
 {
-  this.router.navigateByUrl(`projects/${this.project.id}`);
+  this.router.navigateByUrl(`project/${this.project.id}`);
 }
 }

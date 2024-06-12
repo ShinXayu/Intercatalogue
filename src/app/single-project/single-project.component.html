@@ -1,4 +1,4 @@
-<div class="project-details-page">
+<div class="project-details-page" *ngIf="project$ | async as project">
     <h1 class="project_banner">{{ project.title }}</h1>
     <div class="project-meta">
       <span class="project-responsible"><strong>Responsable:</strong> {{ project.creatorName }} {{project.creatorSurname}}</span>
